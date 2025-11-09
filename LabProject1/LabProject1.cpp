@@ -36,8 +36,18 @@ int main() {
 			result = NAN;
 		}
 		cout << "done" << endl;
+		cout << format("for x = {:.5f}", x) << endl;
+		cout << "result = ";
+		if (not isnan(result)) {
+			cout << format("{:.5f}", result);
+		}
+		else {
+			cout << "undefined";
+		}
+		cout << endl;
 	}
 	catch (exception& e) {
 		cout << e.what() << endl;
 	}
+	return 0;
 }
