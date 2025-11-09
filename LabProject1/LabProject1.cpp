@@ -11,7 +11,7 @@ void greeting() {
 }
 double input() {
 	double x;
-	cout << "Please, enter x from domain (): ";
+	cout << "Please, enter x from domain (x > -9, x != -4, x != 14): ";
 	cin >> x;
 	if (cin.fail()) {
 		throw invalid_argument("wrong input");
@@ -22,6 +22,9 @@ double input() {
 bool is_in_domain(double x) {
 	return (x > -9) && (x != -4) && (x != 14);
 }
+double f(double x) {
+	return cos(28.0 / 52.0) - 19.0 * M_PI + 66.0 * exp(6.0 / ((x - 14.0) * (x + 4.0))) + 9.0 * atan(x - 7.0) - log(x + 9.0) / log(11.0);
+}
 
 int main() {	
 	try {
@@ -30,7 +33,7 @@ int main() {
 		cout << "***** do calculations ... ";
 		double result;
 		if (is_in_domain(x)) {
-			//result = f(x);
+			result = f(x);
 		}
 		else {
 			result = NAN;
